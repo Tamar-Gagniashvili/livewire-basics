@@ -28,7 +28,7 @@ Route::post('/contact', function (Request $request) {
         'message' => 'required',
     ]);
 
-    Mail::to('andre@andre.com')->send(new ContactFormMailable($contact));
+    Mail::to('tamo.gagniashvili@gmail.com')->send(new ContactFormMailable($contact));
 
     return back()->with('success_message', 'We received your message successfully and will get back to you shortly!');
 });

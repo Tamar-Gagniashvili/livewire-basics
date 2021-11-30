@@ -30,10 +30,10 @@ class ContactForm extends Component
     {
         $contact = $this->validate();
 
-        $contact['name'] = $this->name;
-        $contact['email'] = $this->email;
-        $contact['phone'] = $this->phone;
-        $contact['message'] = $this->message;
+        // $contact['name'] = $this->name;
+        // $contact['email'] = $this->email;
+        // $contact['phone'] = $this->phone;
+        // $contact['message'] = $this->message;
 
         sleep(1);
         Mail::to('tamo.gagniashvili@gmail.com')->send(new ContactFormMailable($contact));
@@ -41,10 +41,6 @@ class ContactForm extends Component
         $this->successMessage = 'We received your message successfully and will get back to you shortly!';
 
         $this->resetForm();
-
-    // session()->flash('success_message', 'We received your message successfully and will get back to you shortly!');
-    
-    // return back()->with('success_message', 'We received your message successfully and will get back to you shortly!');
     }
 
     private function resetForm()
